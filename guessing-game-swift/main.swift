@@ -22,8 +22,13 @@ repeat {
     //Prompt the user for input
     print("Welcome to the number guessing game!")
     print("Please guess a number between 0 and 100!")
-    var userGuess = Int(readLine()!)!
+    var userGuess = Int(readLine()!)
     
+    //Validate the users input
+    while userGuess == nil {
+        print("Please enter a valid number")
+        userGuess = Int(readLine()!)
+    }
     
     
     
