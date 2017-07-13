@@ -48,6 +48,19 @@ repeat {
         }
             while userGuess! != secretNumber && numberOfGuesses != 1
     }
+    
+    //This code will run when the user has made 5 guesses.
+    if numberOfGuesses == 1 {
+        print("You ran out of guesses 😭 the correct answer was \(secretNumber). Play again? Y/N?")
+        var stillPlaying = readLine()!.uppercased()
+        while stillPlaying != "Y" && stillPlaying != "N" {
+            print("Please answer with Y or N")
+            stillPlaying = readLine()!
+        }
+        if stillPlaying == "N" {
+            playingGame = false
+        }
+    }
 }
     while playingGame == true
 
