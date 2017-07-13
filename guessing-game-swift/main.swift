@@ -29,9 +29,25 @@ repeat {
         print("Please enter a valid number")
         userGuess = Int(readLine()!)
     }
-    
-    
-    
+    //Code that should run if the users guess is not the same as the secret number
+    if userGuess! != secretNumber {
+        
+        repeat {
+            if userGuess! > secretNumber {
+                numberOfGuesses -= 1
+                print("Guess a lower number")
+                print("You have \(numberOfGuesses) remaining!")
+                userGuess = Int(readLine()!)
+            }
+            if userGuess! < secretNumber {
+                numberOfGuesses -= 1
+                print("Guess a higher number")
+                print("You have \(numberOfGuesses) remaining!")
+                userGuess = Int(readLine()!)
+            }
+        }
+            while userGuess! != secretNumber && numberOfGuesses != 1
+    }
 }
     while playingGame == true
 
