@@ -17,7 +17,7 @@ repeat {
     let secretNumber = arc4random_uniform(100)
     
     //Number of guesses the user has made
-    var numberOfGuesses = 0
+    var numberOfGuesses = 5
     
     //Prompt the user for input
     print("Welcome to the number guessing game!")
@@ -46,12 +46,27 @@ repeat {
                 userGuess = Int(readLine()!)
             }
         }
-            while userGuess! != secretNumber && numberOfGuesses != 1
+        while userGuess! != secretNumber && numberOfGuesses != 1
+    }
+    //This code will run when the user has made 5 guesses.
+        if numberOfGuesses == 1 {
+            print("You ran out of guesses 😭 the correct answer was \(secretNumber). Play again? Y/N?")
+            var stillPlaying = readLine()!.uppercased()
+            while stillPlaying != "Y" && stillPlaying != "N" {
+            print("Please answer with Y or N")
+            stillPlaying = readLine()!
+            }
+        if stillPlaying == "N" {
+            playingGame = false
+        }
+            
     }
     
-    //This code will run when the user has made 5 guesses.
-    if numberOfGuesses == 1 {
-        print("You ran out of guesses 😭 the correct answer was \(secretNumber). Play again? Y/N?")
+    //This code will run when the user has correctly guessed the correct number.
+    if userGuess! == secretNumber {
+        print("You guessed the secret number 🎊🎉🎈🎉🎊!")
+        print("Would you like to play again? Y/N")
+        
         var stillPlaying = readLine()!.uppercased()
         while stillPlaying != "Y" && stillPlaying != "N" {
             print("Please answer with Y or N")
@@ -60,6 +75,7 @@ repeat {
         if stillPlaying == "N" {
             playingGame = false
         }
+        //Explain that a case for yes is not required since the loop will run again as long as playingGame is true
     }
 }
     while playingGame == true
