@@ -8,5 +8,10 @@
 
 import Foundation
 
+//This variable determines if the user is playing the game
+var playingGame = true
 
 
+
+
+ 
