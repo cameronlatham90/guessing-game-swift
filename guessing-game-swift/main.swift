@@ -11,7 +11,13 @@ import Foundation
 //This variable determines if the user is playing the game
 var playingGame = true
 
+//This loop will run while the game is running
+repeat {
+    
+    
+    
+}
+    while playingGame == true
 
 
 
- 
