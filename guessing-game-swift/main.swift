@@ -15,7 +15,7 @@ var playingGame = true
 repeat {
     //Number that the user is trying to guess
     let secretNumber = arc4random_uniform(100)
-    
+    print(secretNumber)
     //Number of guesses the user has made
     var numberOfGuesses = 5
     
@@ -49,7 +49,7 @@ repeat {
         while userGuess! != secretNumber && numberOfGuesses != 1
     }
     //This code will run when the user has made 5 guesses.
-        if numberOfGuesses == 1 {
+        if numberOfGuesses == 1 && userGuess! != secretNumber {
             print("You ran out of guesses 😭 the correct answer was \(secretNumber). Play again? Y/N?")
             var stillPlaying = readLine()!.uppercased()
             while stillPlaying != "Y" && stillPlaying != "N" {
