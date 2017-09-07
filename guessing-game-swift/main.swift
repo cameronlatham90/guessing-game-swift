@@ -15,7 +15,7 @@ var playingGame = true
 repeat {
     //Number that the user is trying to guess
     let secretNumber = arc4random_uniform(100)
-    print(secretNumber)
+
     //Number of guesses the user has made
     var numberOfGuesses = 5
     
