@@ -15,7 +15,7 @@ var playingGame = true
 repeat {
     //Number that the user is trying to guess
     let secretNumber = arc4random_uniform(100)
-
+    
     //Number of guesses the user has made
     var numberOfGuesses = 5
     
@@ -29,9 +29,9 @@ repeat {
         print("Please enter a valid number")
         userGuess = Int(readLine()!)
     }
+    
     //Code that should run if the users guess is not the same as the secret number
     if userGuess! != secretNumber {
-        
         repeat {
             if userGuess! > secretNumber {
                 numberOfGuesses -= 1
@@ -45,21 +45,21 @@ repeat {
                 print("You have \(numberOfGuesses) remaining!")
                 userGuess = Int(readLine()!)
             }
-        }
-        while userGuess! != secretNumber && numberOfGuesses != 1
+        } while userGuess! != secretNumber && numberOfGuesses != 1
     }
+    
     //This code will run when the user has made 5 guesses.
-        if numberOfGuesses == 1 && userGuess! != secretNumber {
-            print("You ran out of guesses 😭 the correct answer was \(secretNumber). Play again? Y/N?")
-            var stillPlaying = readLine()!.uppercased()
-            while stillPlaying != "Y" && stillPlaying != "N" {
+    if numberOfGuesses == 1 && userGuess! != secretNumber {
+        print("You ran out of guesses 😭 the correct answer was \(secretNumber). Play again? Y/N?")
+        var stillPlaying = readLine()!.uppercased()
+        while stillPlaying != "Y" && stillPlaying != "N" {
             print("Please answer with Y or N")
             stillPlaying = readLine()!
-            }
+        }
         if stillPlaying == "N" {
             playingGame = false
         }
-            
+        
     }
     
     //This code will run when the user has correctly guessed the correct number.
@@ -77,8 +77,7 @@ repeat {
         }
         //Explain that a case for yes is not required since the loop will run again as long as playingGame is true
     }
-}
-    while playingGame == true
+} while playingGame == true
 
 
 
